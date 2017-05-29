@@ -132,3 +132,16 @@ and http://localhost:3449 for normal figwheel dev.
 
 Now you can edit your code and use figwheel development workflow while viewing
 your components in React Storybook.
+
+# GitHub pages build
+
+Clone the repo to another directory.
+
+Build the assets in this directory:
+
+```bash
+./scripts/buildProd.sh
+```
+
+Then copy the contents of the `storybookBuild` directory
+to the directory where you have the `gh-pages` branch checked out.
