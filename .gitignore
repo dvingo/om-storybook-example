@@ -14,3 +14,4 @@ pom.xml
 node_modules/
 .idea/
 *.iml
+storybookBuild/

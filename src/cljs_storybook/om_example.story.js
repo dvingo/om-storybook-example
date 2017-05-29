@@ -2,8 +2,6 @@ import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 const {hello, canvas_example, data} = cljs_storybook.core
 
-console.log()
-
 storiesOf('OmComponents', module)
   .add('Simple', () => (
     <div>

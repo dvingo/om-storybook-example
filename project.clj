@@ -10,7 +10,7 @@
                  [org.clojure/clojurescript "1.9.542"]
                  [org.clojure/core.async  "0.3.442"
                   :exclusions [org.clojure/tools.reader]]
-                 [org.omcljs/om "1.0.0-alpha48" :exclusions [cljsjs/react cljsjs/react-dom]]]
+                 [org.omcljs/om "1.0.0-alpha48"]]
 
   :plugins [[lein-figwheel "0.5.10"]
             [lein-cljsbuild "1.1.5" :exclusions [[org.clojure/clojure]]]]
@@ -47,7 +47,12 @@
                 :compiler {:output-to "resources/public/js/compiled/cljs_storybook.js"
                            :main cljs-storybook.core
                            :optimizations :advanced
-                           :pretty-print false}}]}
+                            :foreign-libs
+                           [{
+                             :file "resources/public/js/compiled/jsDeps.js"
+                             :provides ["cljsjs.react" "cljsjs.react.dom"]
+                             }]
+}}]}
 
   :figwheel
   {:css-dirs ["resources/public/css"]}

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "storybook-build": "build-storybook -c .storybook -o storybookBuild",
+    "storybook-build": "build-storybook -c .storybookProd -o storybookBuild",
     "storybook": "start-storybook -p 9002 -c .storybook -s resources/public"
   },
   "devDependencies": {
