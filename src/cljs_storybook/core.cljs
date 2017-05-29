@@ -1,20 +1,17 @@
 (ns cljs-storybook.core
   (:require [om.next :as om :refer-macros [defui]]
             [om.dom :as dom]
+            [cljs-storybook.components :as components]
             cljsjs.react))
 
 (enable-console-print!)
 
-(defui ^:export Hello
-  Object
-  (render [this]
-    (let [{:keys [name]} (om/props this)]
-      (dom/div nil (str " your name is: " name)))))
+(def ^:export canvas-example (om/factory components/CanvasExample))
+(def ^:export hello (om/factory components/Hello))
+(def ^:export data {:name "Hello"})
 
-(def ^:export hello (om/factory Hello))
-
-(js/ReactDOM.render
-  (hello {:name "TESTING"}) js/app)
+;(js/ReactDOM.render
+;  (hello {:name "TESTING"}) js/app)
 (defn on-js-reload []
   ;; optionally touch your app-state to force rerendering depending on
   ;; your application

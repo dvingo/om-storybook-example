@@ -1,16 +1,16 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
-const {Hello, hello} = cljs_storybook.core
-const vals = cljs.core.hash_map(cljs.core.keyword('name'), 'hello')
-const props = {
-  "omcljs$value": om.next.om_props(vals, 0)
-}
+const {hello, canvas_example, data} = cljs_storybook.core
 
-storiesOf('OmComponent', module)
-  .add('Default', () => (
+console.log()
+
+storiesOf('OmComponents', module)
+  .add('Simple', () => (
     <div>
-    {React.createElement(Hello, props)}
-    {hello(vals)}
+    {hello(data)}
     <button>Hello Button</button>
     </div>
+  ))
+  .add('Canvas', () => (
+    <div>{canvas_example()}</div>
   ))
